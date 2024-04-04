@@ -19,5 +19,17 @@ describe("Fixzz Buzz 問題の答えを表示する",()=>{
             // 検証
             expect(outputElement.textContent).toBe("1")
         })
+
+        it('2を入力したら出力欄に"2"と表示する',()=>{
+            // 準備
+            const {getByTestId} = render(<Index />)
+            const inputElement = getByTestId("input")
+            const outputElement = getByTestId("output")
+            // 実行
+            fireEvent.change(inputElement, {target:{value:"2"}})
+            
+            // 検証
+            expect(outputElement.textContent).toBe("2")
+        })
     })
 })
