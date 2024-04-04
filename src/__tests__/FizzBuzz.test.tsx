@@ -1,6 +1,14 @@
 import { fireEvent, render } from "@testing-library/react"
 import Index from "../pages"
 
+
+let inputElement:HTMLElement, outputElement:HTMLElement
+beforeEach(()=>{
+    const {getByTestId} = render(<Index />)
+    inputElement = getByTestId("input")
+    outputElement = getByTestId("output")
+})
+
 describe("Fixzz Buzz 問題の答えを表示する",()=>{
     // まず仕様を書く
     it.todo("入力欄に3の倍数を入力したら出力欄にFizzと表示される")
@@ -9,10 +17,6 @@ describe("Fixzz Buzz 問題の答えを表示する",()=>{
     
     describe("それ以外の数字のときはそのまま出力欄に表示する",()=>{
         it('1を入力したら出力欄に"1"と表示する',()=>{
-            // 準備
-            const {getByTestId} = render(<Index />)
-            const inputElement = getByTestId("input")
-            const outputElement = getByTestId("output")
             // 実行
             fireEvent.change(inputElement, {target:{value:"1"}})
             
@@ -21,10 +25,6 @@ describe("Fixzz Buzz 問題の答えを表示する",()=>{
         })
 
         it('2を入力したら出力欄に"2"と表示する',()=>{
-            // 準備
-            const {getByTestId} = render(<Index />)
-            const inputElement = getByTestId("input")
-            const outputElement = getByTestId("output")
             // 実行
             fireEvent.change(inputElement, {target:{value:"2"}})
             
