@@ -1,4 +1,5 @@
 import { fireEvent, render } from "@testing-library/react"
+import Index from "../pages"
 
 describe("Fixzz Buzz 問題の答えを表示する",()=>{
     // まず仕様を書く
