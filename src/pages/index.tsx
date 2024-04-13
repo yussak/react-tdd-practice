@@ -6,6 +6,10 @@ const Index =()=>{
 
 const convertFizzbuzz=(e)=>{
     const num = Number(e.target.value)
+    if (num % 15 === 0) {
+        setNum("FizzBuzz")
+        return
+    }
     if(num % 3 ===0) {
         setNum("Fizz")
         return
