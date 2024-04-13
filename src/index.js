@@ -4,10 +4,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const TodoList = [
+  { id: 1, title: 'todo1' },
+  { id: 2, title: 'todo2' },
+  // { id: 3, title: 'todo3' },
+]
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    {/* <App /> */}
+    <App TodoList={TodoList} />
   </React.StrictMode>
 );
 

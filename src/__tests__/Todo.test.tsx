@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react"
+import { render, screen } from "@testing-library/react"
 import App from "../App"
 
 describe("Todo機能", () => {
@@ -11,12 +11,12 @@ describe("Todo機能", () => {
     describe("Todo一覧を取得できる", ()=>{
         it("todoの個数を正しく表示できる", ()=>{
             // index.tsxが引数としてtodolistを受け取る
-            render(<App todolist={testTodoList}/>)
-            const todoItems = screen.getAllByText(/todo\d/);
+            render(<App TodoList={testTodoList}/>)
+            const todoItems = screen.getAllByText(/買い物|掃除|洗濯/);
             expect(todoItems).toHaveLength(3)
         })  
-        it.todo("id, titleを正しく取得できる", ()=>{
-        })
+        it.todo("Todoがない時に無いというテキストが出る")
+        it.todo("id, titleを正しく取得できる")
     })
     it.todo("Todoを追加できる")
     it.todo("Todoを削除できる")
