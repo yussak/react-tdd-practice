@@ -1,15 +1,15 @@
 import './App.css';
+import List from './components/List.tsx';
 
-function App({TodoList}) {
-console.log("todo",TodoList)
+const TodoList = [
+  { id: 1, title: 'todo1' },
+  { id: 2, title: 'todo2' },
+]
+function App() {
   return (
     <div className='App'>
       <p>todo追加</p>
-      {TodoList.map((todo) => {
-        return (
-          <p key={todo.id}>{todo.title}</p>
-        )
-      })}
+      <List TodoList={TodoList}/>
     </div>
   );
 }

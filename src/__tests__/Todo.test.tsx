@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react"
-import App from "../App"
+import List from "../components/List"
 
 describe("Todo機能", () => {
     const testTodoList =[
@@ -10,8 +10,7 @@ describe("Todo機能", () => {
     
     describe("Todo一覧を取得できる", ()=>{
         it("todoの個数を正しく表示できる", ()=>{
-            // index.tsxが引数としてtodolistを受け取る
-            render(<App TodoList={testTodoList}/>)
+            render(<List TodoList={testTodoList}/>)
             const todoItems = screen.getAllByText(/買い物|掃除|洗濯/);
             expect(todoItems).toHaveLength(3)
         })  
