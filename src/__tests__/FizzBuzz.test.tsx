@@ -20,7 +20,16 @@ describe("Fixzz Buzz 問題の答えを表示する",()=>{
             expect(outputElement.textContent).toBe("Fizz")
         })
     })
-    it.todo("入力欄に5の倍数を入力したら出力欄にBuzzと表示される")
+
+    describe("入力欄に5の倍数を入力したら出力欄にBuzzと表示される",()=>{
+        it("入力欄に5の倍数を入力したら出力欄にBuzzと表示される",()=>{
+             // 実行
+             fireEvent.change(inputElement, {target:{value:"5"}})
+
+             // 検証
+             expect(outputElement.textContent).toBe("Buzz")
+        })
+    })
     it.todo("入力欄に3,5の両方の倍数を入力したら出力欄にFizzBuzzと表示される")
     
     describe("それ以外の数字のときはそのまま出力欄に表示する",()=>{

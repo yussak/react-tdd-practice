@@ -9,6 +9,9 @@ const convertFizzbuzz=(e)=>{
     if(num % 3 ===0) {
         setNum("Fizz")
         return
+    } else if (num % 5 === 0) {
+        setNum("Buzz")
+        return
     }
     setNum(e.target.value)
 }
