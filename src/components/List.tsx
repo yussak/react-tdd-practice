@@ -2,20 +2,19 @@ const List = ({ TodoList }) => {
   // console.log("todo",TodoList)
 
   return (
-    <div>
+    <ul>
       {TodoList && TodoList.length > 0 ? (
         TodoList.map((todo) => {
           return (
-            // 減らしたい
-            <p key={todo.id} data-id={todo.id} role="listitem">
+            <li key={todo.id}>
               {todo.id}: {todo.title}
-            </p>
+            </li>
           );
         })
       ) : (
         <p>Todoがありません</p>
       )}
-    </div>
+    </ul>
   );
 };
 

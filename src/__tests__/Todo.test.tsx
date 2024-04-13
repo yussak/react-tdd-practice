@@ -24,10 +24,8 @@ describe("Todo機能", () => {
       const todoItems = screen.getAllByRole("listitem");
 
       todoItems.forEach((todo, index) => {
-        expect(todo).toHaveTextContent(testTodoList[index].title);
-        expect(todo).toHaveAttribute(
-          "data-id",
-          testTodoList[index].id.toString(),
+        expect(todo).toHaveTextContent(
+          `${testTodoList[index].id}: ${testTodoList[index].title}`,
         );
       });
     });
