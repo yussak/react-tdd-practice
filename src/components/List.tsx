@@ -5,7 +5,12 @@ const List = ({ TodoList }) => {
     <div>
       {TodoList && TodoList.length > 0 ? (
         TodoList.map((todo) => {
-          return <p key={todo.id}>{todo.title}</p>;
+          return (
+            // 減らしたい
+            <p key={todo.id} data-id={todo.id} role="listitem">
+              {todo.id}: {todo.title}
+            </p>
+          );
         })
       ) : (
         <p>Todoがありません</p>

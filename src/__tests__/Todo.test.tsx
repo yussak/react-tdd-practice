@@ -19,7 +19,18 @@ describe("Todo機能", () => {
       const noTodoText = screen.getByText("Todoがありません");
       expect(noTodoText).toBeInTheDocument();
     });
-    it.todo("id, titleを正しく取得できる");
+    it("id, titleを正しく取得できる", () => {
+      render(<List TodoList={testTodoList} />);
+      const todoItems = screen.getAllByRole("listitem");
+
+      todoItems.forEach((todo, index) => {
+        expect(todo).toHaveTextContent(testTodoList[index].title);
+        expect(todo).toHaveAttribute(
+          "data-id",
+          testTodoList[index].id.toString(),
+        );
+      });
+    });
   });
   it.todo("Todoを追加できる");
   it.todo("Todoを削除できる");
