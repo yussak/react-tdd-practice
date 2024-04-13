@@ -5,6 +5,10 @@ const Index =()=>{
     const [num, setNum]=useState("")
 
 const convertFizzbuzz=(e)=>{
+    if(e.target.value==="3") {
+        setNum("Fizz")
+        return
+    }
     setNum(e.target.value)
 }
 
