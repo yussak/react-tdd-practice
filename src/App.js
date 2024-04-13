@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
+const TodoList = [
+  { id: 1, title: 'todo1' },
+  { id: 2, title: 'todo2' },
+  // { id: 3, title: 'todo3' },
+]
+
+console.log("todo",TodoList)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <p>todo追加</p>
+      {TodoList.map((todo) => {
+        return (
+          <p>{todo.title}</p>
+        )
+      })}
     </div>
   );
 }
